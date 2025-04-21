@@ -14,13 +14,16 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/shop.css">
     <link rel="shortcut icon" href="./images/logo.jpg" type="image/x-icon">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="/"><div class="logo">BookHaven</div></a>
-            <ul>
+            <a href="/" class="logo-link"><div class="logo">BookHaven</div></a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
                 <li><a href="/">Home</a></li>
                 <li><a href="#">Shop</a></li>
                 <li><a href="./contact.html">Contact</a></li>
@@ -31,21 +34,30 @@
     <main>
         <section class="books-section" data-aos="fade-up">
             <h2>All Books</h2>
+            <div class="filter-bar" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Fiction</button>
+                <button class="filter-btn">Non-Fiction</button>
+                <button class="filter-btn">Children's</button>
+            </div>
             <div class="books-grid">
                 <article class="book-card" data-aos="fade-up" data-aos-delay="100">
                     <img src="../images/class5.jpg" alt="Book 5">
                     <h3>Class 5</h3>
-                    <p>$29.99</p>
+                    <p class="price">$29.99</p>
+                    <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
                 </article>
                 <article class="book-card" data-aos="fade-up" data-aos-delay="200">
                     <img src="../images/class8.jpg" alt="Book 8">
                     <h3>Class 8</h3>
-                    <p>$17.99</p>
+                    <p class="price">$17.99</p>
+                    <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
                 </article>
                 <article class="book-card" data-aos="fade-up" data-aos-delay="300">
                     <img src="../images/class9.jpg" alt="Book 6">
                     <h3>Class 9</h3>
-                    <p>$22.99</p>
+                    <p class="price">$22.99</p>
+                    <button class="add-to-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
                 </article>
             </div>
         </section>
@@ -76,7 +88,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 BookHaven. All rights reserved.</p>
+            <p>© 2025 BookHaven. All rights reserved.</p>
         </div>
     </footer>
 
@@ -85,6 +97,9 @@
         AOS.init({
             duration: 1000,
             once: true
+        });
+        document.querySelector('.nav-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-links').classList.toggle('active');
         });
     </script>
 </body>

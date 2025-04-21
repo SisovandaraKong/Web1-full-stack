@@ -19,7 +19,7 @@ body {
 }
 
 header {
-    background: var(--primary-color);
+    background: #2ecc71;
     color: white;
     padding: 1rem 0;
     position: sticky;
@@ -34,31 +34,52 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+    position: relative;
 }
 
-nav .logo {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--accent-color);
+.logo-link {
     text-decoration: none;
 }
 
-nav ul {
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.nav-toggle:hover {
+    color: #e74c3c;
+}
+
+.nav-links {
     display: flex;
     list-style: none;
     gap: 2rem;
+    transition: all 0.3s ease-in-out;
 }
 
-nav ul li a {
+.nav-links li a {
     color: white;
     text-decoration: none;
     font-weight: 400;
     transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    color: var(--accent-color);
+.nav-links li a:hover {
+    color: #e74c3c;
 }
+
 
 .hero {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://cdn.dribbble.com/userupload/9023161/file/original-6621e5f77cd69b25e3cb9319c8e1f456.jpg') center/cover;
@@ -341,6 +362,30 @@ footer {
 
 
 @media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #2ecc71;
+        padding: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
     .why-shop h2 {
         font-size: 1.8rem;
     }
@@ -366,15 +411,6 @@ footer {
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
-    }
-    nav {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
     }
 
     .hero h1 {

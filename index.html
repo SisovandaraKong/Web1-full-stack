@@ -14,12 +14,16 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./images/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="/"><div class="logo">BookHaven</div></a>
-            <ul>
+            <a href="/" class="logo-link"><div class="logo">BookHaven</div></a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
                 <li><a href="/">Home</a></li>
                 <li><a href="./pages/shop.html">Shop</a></li>
                 <li><a href="./pages/contact.html">Contact</a></li>
@@ -84,7 +88,7 @@
             <p>Discover the benefits of finding your next book with us.</p>
             <div class="benefits-grid">
                 <article class="benefit-card" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-books fa-2x"></i>
+                    <i class="fas fa-solid fa-book-open fa-2x"></i>
                     <h3>Wide Selection</h3>
                     <p>Explore thousands of books across all genres for every reader.</p>
                 </article>
@@ -142,6 +146,9 @@
             duration: 1000,
             once: true
         });
+        document.querySelector('.nav-toggle').addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.toggle('active');
+    });
     </script>
 </body>
 </html>

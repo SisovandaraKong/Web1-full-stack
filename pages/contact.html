@@ -14,12 +14,16 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/contact.css">
     <link rel="shortcut icon" href="./images/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
-            <a href="/"><div class="logo">BookHaven</div></a>
-            <ul>
+            <a href="/" class="logo-link"><div class="logo">BookHaven</div></a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
                 <li><a href="/">Home</a></li>
                 <li><a href="./shop.html">Shop</a></li>
                 <li><a href="#">Contact</a></li>
@@ -31,10 +35,40 @@
         <section class="contact-section" data-aos="fade-up">
             <h2>Contact Us</h2>
             <p>Have questions or need assistance? Reach out to us!</p>
-            <div class="contact-info" data-aos="fade-up" data-aos-delay="100">
-                <p><strong>Email:</strong> support@bookhaven.com</p>
-                <p><strong>Phone:</strong> +1-800-123-4567</p>
-                <p><strong>Address:</strong> 123 Book Street, Reading City, 12345</p>
+            <div class="contact-container">
+                <div class="contact-info" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Get in Touch</h3>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p><strong>Email:</strong> <a href="mailto:sisovandara.com">sisovandara.com</a></p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p><strong>Phone:</strong> <a href="tel:+85517349304">+85517349304</a></p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p><strong>Address:</strong> Phnom Penh</p>
+                    </div>
+                </div>
+                <div class="contact-form" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Send Us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
@@ -64,7 +98,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 BookHaven. All rights reserved.</p>
+            <p>© 2025 BookHaven. All rights reserved.</p>
         </div>
     </footer>
 
